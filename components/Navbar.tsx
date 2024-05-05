@@ -14,6 +14,7 @@ import { Button } from "./ui/button";
 import React from "react";
 import { Database } from "@/types/supabase";
 import ClientSideCredits from "./realtime/ClientSideCredits";
+import { UtopiaLogo } from "./ui/utopia-logo";
 
 export const dynamic = "force-dynamic";
 
@@ -33,10 +34,10 @@ export default async function Navbar() {
   } = await supabase.from("credits").select("*").eq("user_id", user?.id ?? '').single()
 
   return (
-    <div className="flex w-full px-4 lg:px-40 py-4 items-center border-b text-center gap-8 justify-between">
+    <div className="flex w-full px-4 lg:px-6 py-6 items-center text-center gap-8 justify-between">
       <div className="flex gap-2 h-full">
         <Link href="/">
-          <h2 className="font-bold">Headshots AI</h2>
+          <h2 className="font-bold ml-2"><UtopiaLogo/></h2>
         </Link>
       </div>
       {user && (
@@ -54,7 +55,7 @@ export default async function Navbar() {
       <div className="flex gap-4 lg:ml-auto">
         {!user && (
           <Link href="/login">
-            <Button variant={"ghost"}>Login / Signup</Button>
+            <Button variant={"outline"}>Login / Signup</Button>
           </Link>
         )}
         {user && (
