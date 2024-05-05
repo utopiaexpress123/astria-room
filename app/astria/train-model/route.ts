@@ -135,18 +135,14 @@ export async function POST(request: Request) {
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
-        image_urls: images,
+        input_image_url: images,
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `portrait of ohwx ${type} wearing a business suit, professional photo, white background, Amazing Details, Best Quality, Masterpiece, dramatic lighting highly detailed, analog photo, overglaze, 80mm Sigma f/1.4 or any ZEISS lens`,
+            text: `Clean scandinavian design living room, natural light, architecture magazine cover  <lora:epi_noiseoffset2:0.5><lora:FilmVelvia2:0.5><lora:add_detail:0.5><lora:epiCRealismHelper:0.2> --mask_prompt windows door --mask_invert --controlnets mlsd segroom --controlnet_weights 0.5 1`,
             callback: promptWebhookWithParams,
-            num_images: 8,
-          },
-          {
-            text: `8k close up linkedin profile picture of ohwx ${type}, professional jack suite, professional headshots, photo-realistic, 4k, high-resolution image, workplace settings, upper body, modern outfit, professional suit, business, blurred background, glass building, office window`,
-            callback: promptWebhookWithParams,
-            num_images: 8,
+            negative_prompt:`painted,sketch,deformed,easynegative`,
+            num_images: 4,
           },
         ],
       },
