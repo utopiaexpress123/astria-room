@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     );
   }
 
-  if (images?.length < 1) {
+  if (images?.length < 4) {
     return NextResponse.json(
       {
         message: "Upload at least 4 sample images",
