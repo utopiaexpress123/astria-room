@@ -131,7 +131,7 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 690204,
+        base_tune_id: 444827,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
    
@@ -139,7 +139,7 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `Clean scandinavian design living room, natural light, architecture magazine cover`,
+            text: `Clean scandinavian design living room, natural light, architecture magazine cover -mask_prompt windows door --mask_invert --controlnets mlsd segroom --controlnet_weights 0.5 1`,
             negative_prompt:``,
             callback: promptWebhookWithParams,
             num_images: 2,
