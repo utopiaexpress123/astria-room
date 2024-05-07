@@ -134,12 +134,12 @@ export async function POST(request: Request) {
         base_tune_id: 444827,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
-   
+        token: "ohwx",
         image_urls: images,
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `Clean scandinavian design living room, natural light, architecture magazine cover -mask_prompt windows door --mask_invert --controlnets mlsd segroom --controlnet_weights 0.5 1`,
+            text: `${type} Clean scandinavian design living room, natural light, architecture magazine cover -mask_prompt windows door --mask_invert --controlnets mlsd segroom --controlnet_weights 0.5 1`,
             negative_prompt:``,
             callback: promptWebhookWithParams,
             num_images: 2,
