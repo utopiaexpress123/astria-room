@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     );
   }
 
-  if (images?.length < 1) {
+  if (images?.length < 4) {
     return NextResponse.json(
       {
         message: "Upload at least 4 sample images",
@@ -131,7 +131,7 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 666678,
+        base_tune_id: 657379,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
         token: "ohwx",
@@ -139,17 +139,16 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `a living room in a NYC appartment, indoor, furniture`,
+            text: `${name} portrait of ohwx ${type} with pixie haircut`,
             negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
             callback: promptWebhookWithParams,
             num_images: 2,
-            controlnet: `mlsd`,
           },
         ],
       },
     };
 
-    const response = await axios.post(DOMAIN + "/tunes/666678/prompts", body, {
+    const response = await axios.post(DOMAIN + "/tunes", body, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${API_KEY}`,
