@@ -139,8 +139,8 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `${name} portrait of ohwx ${type} with pixie haircut`,
-            negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
+            text: "Clean scandinavian design living room, natural light, architecture magazine cover <lora:epi_noiseoffset2:0.5><lora:FilmVelvia2:0.5><lora:add_detail:0.5><lora:epiCRealismHelper:0.2> --mask_prompt windows door --mask_invert --controlnets mlsd segroom",
+            negative_prompt:"painted, sketch, deformed, easynegative",
             callback: promptWebhookWithParams,
             num_images: 2,
           },
