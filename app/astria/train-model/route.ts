@@ -139,7 +139,7 @@ export async function POST(request: Request) {
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `ohwx ${type} Clean scandinavian design living room, natural light, architecture magazine cover`,
+            text: `Clean scandinavian design living room, natural light, architecture magazine cover`,
             negative_prompt:``,
             callback: promptWebhookWithParams,
             num_images: 2,
