@@ -131,9 +131,10 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 666678,
+        base_tune_id: 657379,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
+        token: "ohwx",
         image_urls: images,
         callback: trainWenhookWithParams,
         prompts_attributes: [
@@ -147,7 +148,7 @@ export async function POST(request: Request) {
       },
     };
 
-    const response = await axios.post(DOMAIN + "/tunes/666678/prompts", body, {
+    const response = await axios.post(DOMAIN + "/tunes", body, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${API_KEY}`,
