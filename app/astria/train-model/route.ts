@@ -131,18 +131,18 @@ export async function POST(request: Request) {
         title: name,
         // Hard coded tune id of Realistic Vision v5.1 from the gallery - https://www.astria.ai/gallery/tunes
         // https://www.astria.ai/gallery/tunes/690204/prompts
-        base_tune_id: 690204,
+        base_tune_id: 657379,
         name: type,
         branch: astriaTestModeIsOn ? "fast" : "sd15",
-        image_urls: images,
         token: "ohwx",
+        image_urls: images,
         callback: trainWenhookWithParams,
         prompts_attributes: [
           {
-            text: `${type} Clean scandinavian design living room, natural light, architecture magazine cover <lora:epi_noiseoffset2:0.5><lora:FilmVelvia2:0.5><lora:add_detail:0.5><lora:epiCRealismHelper:0.2> --mask_prompt windows door --mask_invert --controlnets mlsd segroom --controlnet_weights 0.5 1`,
+            text: `${name} portrait of ohwx ${type} with pixie haircut`,
+            negative_prompt:`old, wrinkled, ugly, depressed, bad anatomy `,
             callback: promptWebhookWithParams,
-            negative_prompt:`painted,sketch,deformed,easynegative`,
-            num_images: 4,
+            num_images: 2,
           },
         ],
       },

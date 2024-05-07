@@ -9,6 +9,7 @@ import { cookies } from "next/headers";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { FaArrowLeft } from "react-icons/fa";
+import { CloseIcon } from "@/components/ui/close-icon";
 
 export const dynamic = "force-dynamic";
 
@@ -41,13 +42,12 @@ export default async function Index({ params }: { params: { id: string } }) {
   const { data: samples } = await supabase.from("samples").select("*").eq("modelId", model.id);
 
   return (
-    <div id="train-model-container" className="w-full h-full">
-      <div className="flex flex-row gap-4">
-        <Link href="/overview" className="text-xs w-fit">
-          <Button variant={"outline"} className="text-xs" size="sm">
-            <FaArrowLeft className="mr-2" />
-            Go Back
-          </Button>
+    <div id="train-model-container" className="p-4 w-full bg-stone-100 rounded-2xl shadow-xl">
+      <div className="flex flex-row gap-4 relative">
+        <Link href="/overview" className="text-sm w-fit">
+          <Button variant={"ghost"} className="text-xs absolute top-0 right-0" size="sm">
+            <CloseIcon/>
+          </Button> 
         </Link>
         <div className="flex flex-row gap-2 align-middle text-center items-center pb-4">
           <h1 className="text-xl">{model.name}</h1>

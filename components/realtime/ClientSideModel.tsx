@@ -46,31 +46,31 @@ export default function ClientSideModel({
 
   return (
     <div id="train-model-container" className="w-full h-full">
-      <div className="flex flex-col w-full mt-4 gap-8">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-0">
+      <div className="flex flex-col w-full mt-2 gap-4">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-0">
           {samples && (
-            <div className="flex w-full lg:w-1/2 flex-col gap-2">
-              <h2 className="text-xl">Training Data</h2>
+            <div className="flex w-full lg:w-2/5 flex-col gap-2">
+              <h2 className="text-xl opacity-25">Your photos</h2>
               <div className="flex flex-row gap-4 flex-wrap">
                 {samples.map((sample) => (
                   <img
                     src={sample.uri}
-                    className="rounded-md w-60 h-60 object-cover"
+                    className="rounded-md w-32 h-24 object-cover"
                   />
                 ))}
               </div>
             </div>
           )}
-          <div className="flex flex-col w-full lg:w-1/2 rounded-md">
+          <div className="flex flex-col w-full lg:w-3/5 rounded-md">
             {model.status === "finished" && (
               <div className="flex flex-1 flex-col gap-2">
-                <h1 className="text-xl">Results</h1>
+                <h1 className="text-xl opacity-25">Results</h1>
                 <div className="flex flex-row flex-wrap gap-4">
                   {serverImages?.map((image) => (
                     <div key={image.id}>
                       <img
                         src={image.uri}
-                        className="rounded-md w-60 object-cover"
+                        className="mx-auto text-center rounded-sm w-96 object-cover"
                       />
                     </div>
                   ))}

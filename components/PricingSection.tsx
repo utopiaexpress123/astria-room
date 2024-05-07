@@ -48,9 +48,9 @@ const pricingOptions = [
     title: "Starter",
     price: "1 Credit",
     description:
-      "Perfect for individuals looking to enhance their online presence.",
+      "19 different hairstyle and haircut for you",
     features: [
-      "4 AI Headshots",
+      "One round of image generation",
     ],
     buttonText: "Choose Starter",
     bgColor: "bg-white",
@@ -59,9 +59,9 @@ const pricingOptions = [
     title: "Basic",
     price: "3 Credits",
     description:
-      "Ideal for professionals requiring frequent updates to their profiles.",
+      "3x19 different hairstyle and haircut for you",
     features: [
-      "12 AI Headshots",
+      "Three round of image generation",
     ],
     buttonText: "Choose Basic",
     bgColor: "bg-blue-50",
@@ -69,9 +69,9 @@ const pricingOptions = [
   {
     title: "Premium",
     price: "5 Credits",
-    description: "The best value with unlimited possibilities.",
+    description: "5x19 different hairstyle and haircut for you",
     features: [
-      "20 AI Headshots",
+      "Five round of image generation",
     ],
     buttonText: "Choose Premium",
     bgColor: "bg-white",

@@ -15,6 +15,7 @@ import React from "react";
 import { Database } from "@/types/supabase";
 import ClientSideCredits from "./realtime/ClientSideCredits";
 import { UtopiaLogo } from "./ui/utopia-logo";
+import { UserIcon } from "./ui/user-icon";
 
 export const dynamic = "force-dynamic";
 
@@ -43,11 +44,11 @@ export default async function Navbar() {
       {user && (
         <div className="hidden lg:flex flex-row gap-2">
           <Link href="/overview">
-            <Button variant={"ghost"}>Home</Button>
+            <Button variant={"ghost"}>Haircut</Button>
           </Link>
           {stripeIsConfigured && (
             <Link href="/get-credits">
-              <Button variant={"ghost"}>Get Credits</Button>
+              <Button variant={"outline"}>Get Credits</Button>
             </Link>
           )}
         </div>
@@ -65,7 +66,9 @@ export default async function Navbar() {
             )}
             <DropdownMenu>
               <DropdownMenuTrigger asChild className="cursor-pointer">
-                <AvatarIcon height={24} width={24} className="text-primary" />
+                <div className="transition-all pt-2 pl-2 w-8 h-8 bg-transparent hover:bg-stone-100 border border-stone-200 rounded-full shadow-lg">
+                  <UserIcon/>
+                </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
                 <DropdownMenuLabel className="text-primary text-center overflow-hidden text-ellipsis">{user.email}</DropdownMenuLabel>
